@@ -1,7 +1,7 @@
 # UIVew
 Android﻿三大瓶颈之一：自定义 View
 
-#Paint
+# Paint
 ### Paint 的API 大致可以分为四类
 
 - 颜色
