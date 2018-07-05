@@ -52,7 +52,8 @@ canvas.drawText("HenCoder", 500, 130, paint);
  ### 1.2 setColoFilter(ColorFilter colorFilter)
  颜色过滤器,在Paint 里设置ColorFilter,使用的是Paint.setClolorFilter();ColorFilter并不直接使用,而是使用它的子类.它共有三个子类分别是LightingColorFilter ProterDuffColorFilter ColorMatrixColorFilter .
  
- 
+ ### 1.3 setXfermode(Xfermode xfermode)
+ "Xfermode" 其实就是 "Transfer mode"，用 "X" 来代替 "Trans" 是一些美国人喜欢用的简写方式。严谨地讲， Xfermode 指的是你要绘制的内容和 Canvas 的目标位置的内容应该怎样结合计算出最终的颜色。但通俗地说，其实就是要你以绘制的内容作为源图像，以 View 中已有的内容作为目标图像，选取一个  PorterDuff.Mode 作为绘制内容的颜色处理方案
  
  
  

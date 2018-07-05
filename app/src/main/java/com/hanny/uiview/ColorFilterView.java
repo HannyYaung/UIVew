@@ -9,6 +9,8 @@ import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -33,13 +35,26 @@ public class ColorFilterView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        drawLightFilter(canvas);
+//        drawLightFilter(canvas);
+//        drawProterDuffColorFilter(canvas);
+        drawColorMatrixColorFilter(canvas);
     }
 
     private void drawLightFilter(Canvas canvas) {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meizi);
-        ColorFilter colorFilter = new LightingColorFilter(0xffffff, 0x000000);
+        ColorFilter colorFilter = new LightingColorFilter(0xffffff, 0xffff00);
         paint.setColorFilter(colorFilter);
         canvas.drawBitmap(bitmap, new Matrix(), paint);
+    }
+
+    private void drawProterDuffColorFilter(Canvas canvas) {
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meizi);
+        ColorFilter colorFilter = new PorterDuffColorFilter(Color.parseColor("#ff00ff"), PorterDuff.Mode.DST_OUT);
+        paint.setColorFilter(colorFilter);
+        canvas.drawBitmap(bitmap, new Matrix(), paint);
+    }
+
+    private void drawColorMatrixColorFilter(Canvas canvas) {
+        //https://github.com/chengdazhi/StyleImageView
     }
 }
