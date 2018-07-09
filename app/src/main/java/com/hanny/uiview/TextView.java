@@ -10,6 +10,7 @@ import android.view.View;
 public class TextView extends View {
 
     private Paint paint;
+    private String text;
 
     public TextView(Context context) {
         this(context, null);
@@ -22,11 +23,13 @@ public class TextView extends View {
     public TextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         paint = new Paint();
+        paint.setTextSize(40);
+        text = "Hello World";
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        canvas.drawText(text,100,100,paint);
     }
 }

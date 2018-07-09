@@ -57,3 +57,12 @@ canvas.drawText("HenCoder", 500, 130, paint);
  
  
  
+ 
+ 
+ ## view的绘制顺序
+ - 背景
+ - 主体（onDraw）
+ - 子View(dispatchDraw)
+ - 滑动边缘渐变和滑动条
+ - 前景
+ ![](https://ws4.sinaimg.cn/large/006tKfTcly1fiiwb2nr63j30ga0bddgg.jpg)
